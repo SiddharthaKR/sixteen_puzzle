@@ -156,6 +156,7 @@ class Puzzle {
       const minuteTaken =document.getElementById("min").innerHTML;
       const secondTaken = document.getElementById("sec").innerHTML;
       const movesTaken = document.getElementById("moves").innerHTML;
+      console.log(minuteTaken,secondTaken,movesTaken);
      }
     }
    }
