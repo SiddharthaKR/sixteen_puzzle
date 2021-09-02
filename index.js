@@ -171,23 +171,24 @@ class Puzzle {
     document.getElementById("shuffle").style.visibility = "hidden";
     document.getElementById("subbtn").style.visibility = "hidden";
     
-    let numbersArranged=document.querySelectorAll(".numbers");
+   
     let count=1;
     
    for(let i=0;i<=15;i++){
-     if(document.querySelectorAll(".numbers")[i].innerHTML==count){
+     if(document.querySelectorAll(".numbers")[i].innerText==count){
+       
        count=count+1;
        
      }
-     else{
-       break;
-     }
+    else{
+      break;
+    }
    }
    let p=count-1;
-   console.log(p);
+   
    document.getElementById("submittedGame").innerHTML= "you have made " + movesTaken +" moves and matched "+ p +" boxes";
    document.getElementById("submittedGame").style.visibility = "visible";
-   document.getElementById("head").style.visibility = "visible";
+  
    document.getElementById("submittedGame").style.visibility = "visible";
    }
 
@@ -239,11 +240,7 @@ class Puzzle {
   };
   
   
-  document.getElementById("startButton").addEventListener("click", function () { Clock.start(); });
-  document.getElementById("pauseButton").addEventListener("click", function () { Clock.pause(); });
-  document.getElementById("resumeButton").addEventListener("click", function () { Clock.resume(); });
-  document.getElementById("resetButton").addEventListener("click", function () { Clock.reset(); });
-  document.getElementById("restartButton").addEventListener("click", function () { Clock.restart(); });
+
 
 
   
