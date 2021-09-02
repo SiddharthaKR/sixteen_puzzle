@@ -19,7 +19,8 @@ class Puzzle {
      this.started = false;
      document.getElementById("moves").innerText = this.moves;
      document.getElementById("done").style.visibility = "hidden";
-    
+     document.getElementById("submittedGame").style.visibility = "hidden";
+
      let t = 1;
      for (let y = 0; y < 6; y++) {
       for (let x = 0; x < 6; x++) {
@@ -94,7 +95,7 @@ class Puzzle {
       document.getElementById("moves").innerText = this.moves;
       document.getElementById("shuffle").innerText = "RESTART";
 
-     
+      
         Clock.start();
       
       
@@ -140,7 +141,7 @@ class Puzzle {
      document.getElementById("moves").innerText = this.moves;
     }
     
-    checkSolved() {
+    checkSolved() { 
      function check() {
       const z = document.querySelectorAll(".numbers");
       let u = 1;
@@ -160,7 +161,42 @@ class Puzzle {
      }
     }
    }
+   
+   function submitFunction(){
+    Clock.pause();
+    const minuteTaken =document.getElementById("min").innerHTML;
+    const secondTaken = document.getElementById("sec").innerHTML;
+    const movesTaken = document.getElementById("moves").innerHTML;
+    console.log(minuteTaken,secondTaken,movesTaken);
+    document.getElementById("shuffle").style.visibility = "hidden";
+    document.getElementById("subbtn").style.visibility = "hidden";
     
+    let numbersArranged=document.querySelectorAll(".numbers");
+    let count=1;
+    
+   for(let i=0;i<=15;i++){
+     if(document.querySelectorAll(".numbers")[i].innerHTML==count){
+       count=count+1;
+       
+     }
+     else{
+       break;
+     }
+   }
+   let p=count-1;
+   console.log(p);
+   document.getElementById("submittedGame").innerHTML= "you have made " + movesTaken +" moves and matched "+ p +" boxes";
+   document.getElementById("submittedGame").style.visibility = "visible";
+   document.getElementById("head").style.visibility = "visible";
+   document.getElementById("submittedGame").style.visibility = "visible";
+   }
+
+ 
+ 
+
+
+
+
    new Puzzle();
     
 
@@ -208,3 +244,6 @@ class Puzzle {
   document.getElementById("resumeButton").addEventListener("click", function () { Clock.resume(); });
   document.getElementById("resetButton").addEventListener("click", function () { Clock.reset(); });
   document.getElementById("restartButton").addEventListener("click", function () { Clock.restart(); });
+
+
+  

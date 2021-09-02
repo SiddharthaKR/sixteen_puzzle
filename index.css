@@ -28,6 +28,7 @@
     top: 250px;
     left: calc(50% - 380px);
    }
+
    #moves {
     font-size: 40px;
     line-height: 80px;
@@ -51,6 +52,7 @@
     cursor: none;
     margin: 1px;
     transition: all .3s;
+    
    }
    .btn:hover {
     background-color: rgba(71, 231, 71, 0.5);
@@ -60,3 +62,22 @@
     border: 1px solid white;
     cursor: none;
    }
+
+
+   #submittedGame {
+    font-size: 140px;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 23, 56, .5);
+    border: 1px solid rgb(0, 90, 220);
+    width: 700px;
+    position: absolute;
+    top: 250px;
+    left: calc(50% - 380px);
+   }
+
+   .but{
+    position: relative !important;
+    bottom: 690px !important;
+   }
+  
